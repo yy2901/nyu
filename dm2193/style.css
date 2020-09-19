@@ -1,0 +1,40 @@
+html{
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+}
+
+body{
+    margin: 0;
+}
+
+#start{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100 * var(--vh));
+}
+
+#start > h1{
+    margin: 0;
+    font-size: 5rem;
+    line-height: 5rem;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+a[href]{
+    color:black;
+    text-decoration:none;
+    display: inline-block;
+    transition: transform 0.1s;
+}
+
+a[href]:hover{
+    transform: skew(-30deg,0) translate(1rem,0);
+}
+
+span[t]{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 100;
+    font-style: italic;
+}
