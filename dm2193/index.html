@@ -3,24 +3,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <title>Yuhao Yang - DM2193</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="start">
-    <h1>Yuhao Yang</h1>
-    <h1>DM<span t>2193</span></h1>
-    <h1><a href="https://y.management/nyu/dm2193/code1" target="_blank">w<span t>ee</span>k#<span t>2</span></a></h1>
-    <h1><a href="week3/">week#<span t>3</span></a></h1>
-    <h1><a>wee<span t>k</span>#<span t>4</span></a></h1>
-    <h1><a><span t>w</span>eek#<span t>5</span></a></h1>
-    </div>
+    <div id="root"></div>
+
     <script>
         document.documentElement.style.setProperty('--vh',`${window.innerHeight*0.01}px`);
         window.addEventListener('resize',()=>{
             document.documentElement.style.setProperty('--vh',`${window.innerHeight*0.01}px`);
-        })
+        });
+    </script>
+    <script type="text/babel">
+        const data = {
+            nav:[
+                {
+                    id:1,
+                    c:"Yuhao Yang",
+                    l:null
+                },
+                {
+                    id:2,
+                    c:"DM2193",
+                    l:null
+                },
+                {
+                    id:3,
+                    c:"week#2",
+                    l:"week2"
+                },
+                {
+                    id:4,
+                    c:"week#3",
+                    l:"week3"
+                }
+            ],
+            pages:[
+                {
+                    id:1,
+                    slug:"week2",
+                    c:[
+                        {
+                            id:1,
+                            t:"title",
+                            c:"WAYS OF SEEING, EPISODE 1 (1972) / JOHN BERGER"
+                        },
+                        {
+                            id:2,
+                            t:"text",
+                            c:"Of all these episodes the episode above, episode 1 is an episode I really connected with. There were lots of things I didn’t agree with. But these things did not outweigh the things I’ve learned. I really enjoy how John Berger gave consciousness to the camera. There was a brief period where the camera became a person almost. A confident person. Gloating and expressing pride for its contribution to the way we see. John Berger in this personification of an otherwise soulless camera helped me understand the gravity of its ability. Photography shares the gift of seeing other parts of the world.I have never been to Nevada but I can see it, and experience it at home because of a camera. John Berger often jumped from two points. How reproduction of art has gained something, and how it's also lost something. John says “a painting on a wall, like a human eye, can only be in one place at one time”. John then proceeds to say “ the camera reproduces it making it available in any size, anywhere for any purpose. This for me was a circumstance in art reproduction I never mediated on. Interestingly enough it is a lost and gain for the art piece. More can see it, but some of the experience is lost. Johns explains this to us with Botticello’s Venus and Mars. An image that once could only be seen in the room it was actually hanging in, this was a major and unique quality of the painting Venus and Mars."
+                        },
+                        {
+                            id:3,
+                            t:"repeater",
+                            c:{
+                                s:"https://y.management/nyu/dm2193/code1/assets/hero.jpg",
+                                w:"1200px"
+                            }
+                        },
+                        {
+                            id:4,
+                            t:"text",
+                            c:"As John continues he expands on the idea that the environment contributes to the image. Especially when it comes to religious painting and icon art. Some of these paintings were used to explain life inside the religious place they once occupied before they fill our museums, libraries, and image search results on the internet. Often the painting told us of the daily lives of members of the chapel. Without the painting in the chapel some of the context is lost. The place the image first spawned is meant to live in balance with the image John argues. He notes this may especially be true for religious artworks that involve icons. Pieces of art devout spiritualists would travel miles by foot to see. Are now in the palms of our hands. John says “ images come to you, you do not go to them, the pilgrimage is over.”"
+                        },
+                        {
+                            id:5,
+                            t:"text",
+                            c:"My only disagreements with John Berger are with his dislikes on video reproduction of paintings. I do think some of what he said on the way it has deformed the image is true. John says paintings are still and silent. In video reproductions of paintings often pans, zooms, and cuts can change the narrative of the painting. I think “wrong” isn't how we should view this. It should be seen more as a “relative” viewing experience. I do agree that zooming in to a painting can in fact shift the narrative, but I think if you zoom back out nothing has been lost. I personally believe the dynamic zooms, pans, and cuts help see the image more and try to experience it in a way that would be alike in person. At a gallery I look at the image up close as possible sometimes, not always from corner to corner. I agree with John on sound. I think it's an awful idea to play sound on a video documentation of a painting, I find it jarring."
+                        },
+                        {
+                            id:6,
+                            t:"text",
+                            c:"John helps me understand images in a way I really enjoy now. I like what he says close to the very end about how images can be used to convey our artistic experience. John says “the reproduction of works of art can be used like words. We can talk with them. Reproduction should make it easier to connect our experience of art directly with other experiences”"
+                        },
+                        {
+                            id:7,
+                            t:"footer",
+                            c:{
+                                v:"https://y.management/nyu/dm2193/code1/assets/footer.mp4",
+                                d:"09/12/2020"
+                            }
+                        }
+                    ]
+                },
+                {
+                    id:2,
+                    slug:"week3",
+                    c:[
+                        {
+                            id:1,
+                            t:"title",
+                            c:"reading responses week 03"
+                        },
+                        {
+                            id:2,
+                            t:"text",
+                            c:`<a href="https://www.theatlantic.com/entertainment/archive/2018/06/160-years-of-the-american-idea/563801/">The 160 years of the American Idea</a> by Annika Neklason is a short piece that shares with us the intent and ideas that helped birth the publication “The Atlantic”. Annika tells us that the Atlantic helped us learn that an honest publication, with honest journalism could never be neutral, and must always be non-partisan. The atlantic as a publication used journalism to help abolish slavery, and today it continues to fight for equality. The American idea is a catalogue of all the articles that fashioned what the Atlantic is. It is an article written to remind us all of the articles the Atlantic has made that are still important today, and likely relative to american life today. 
+“That vision of the American idea—emancipation, the process of becoming free of chains, of discrimination, of suffering—runs through these works individually and collectively”`
+                        },
+                        {
+                            id:3,
+                            t:"repeater",
+                            c:{
+                                s:"https://yuhao.world/assets/ins/1.jpg",
+                                w:"900px"
+                            }
+                        },
+                        {
+                            id:4,
+                            t:"text",
+                            c:`In “long live the web” Tim Berners-Lee gives us a brief history of the internet, a brief walkthrough of what makes the internet, and a in-depth discussion on why it's important to keep the internet the way it started. Tim Bernes-Lee does not want to stop technological change but believes we should pay more attention to how the web is changing policy-wise. Tim Berners-Lee began the article by sharing with us the glory days of the internet when it was a more open platform that was less exploited. Some of what Tim Berners-Lee marvels at is how the internet can serve as a database of information and how this is beautiful but this kind of web is in danger. Social media sites are stealing our information and selling it. Politicians are spying on us. Our human rights are being violated discreetly as we browse our favorite websites and apps. Tim Berners-Lee also talks about access to the web. How it's universally important for everyone to have access to the web. Tim calls the web a public resource. Certain sites like iTunes are working in a walled-off system where information can not be shared. Tim says the sharing of information is a basic principle and ethos of the web. “not using open standards creates closed worlds.`
+                        },
+                        {
+                            id:5,
+                            t:"text",
+                            c:`Apple’s iTunes system, for example, identifies songs and videos using URIs that are open. But instead of “HTTP:” the addresses begin with “iTunes:” which is proprietary. You can access an “iTunes:” link only using Apple’s proprietary iTunes program. You can’t make a link to any information in the iTunes world— a song or information about a band. You can’t send that link to someone else to see. You are no longer on the Web.” Open standards have always been a great way to keep the web very functional, and also universal. Amazon is a great example of an open platform website. Where data is shared and logged to help heighten our web experience. By seeing this open format we can learn from it and add more to the list of sites that function well. All the designs are royalty-free and the public can learn from sites like amazon.`
+                        },
+                        {
+                            id:6,
+                            t:"repeater",
+                            c:{
+                                s:"https://y.management/nyu/dm2193/code1/assets/1988.jpg",
+                                w:"1260px"
+                            }
+                        },
+                        {
+                            id:7,
+                            t:"text",
+                            c:`Tim Berners-Lee allows us to see concerns about the internet that may not necessarily be in plain sight. “The Web is also vital to democracy, a communications channel that makes possible a continuous worldwide conversation. The Web is now more critical to free speech than any other medium. It brings principles established in the U.S. Constitution, the British Magna Carta, and other important documents into the network age: freedom from being snooped on, filtered, censored, and disconnected.” Tim reminds us that the internet is a valuable, and public resource. That must be universally accepted, that should be uncensored, that should ask us for consent when it comes to our privacy. The internet can carry a voice, written word, miles in seconds. We should be more thoughtful about the policies and steps our American government is taking to censor and control the way “we” the people of America can use the web.`
+                        },
+                        {
+                            id:8,
+                            t:"footer",
+                            c:{
+                                v:"https://y.management/nyu/dm2193/code1/assets/footer.mp4",
+                                d:"09/20/2020"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+
+        class Home extends React.Component {
+            constructor(props){
+                super(props)
+                this.state = {
+                    entered: false
+                }
+                this.timer = null;
+                this.handleClick = (target)=>{
+                    this.props.setLocation(target)
+                }
+            }
+            componentDidMount(){
+                this.timer = setTimeout(() => {
+                    this.setState({entered:true})
+                }, 200);
+            }
+            render(){
+                return(
+                    <div className="start" style={{opacity:this.state.entered&&this.props.location===""?"1":"0",pointerEvents:this.props.location===""?"visible":"none"}}>
+                        {
+                            data.nav.map((n,j)=>(
+                                <h1 id={n.id}><a myhref={n.l} onClick={j>1?()=>this.handleClick(n.l):null}>{n.c.split("").map((l,i)=>(
+                                    <span t={(j+i)%2===0?j>1?"1":null:null}>{l}</span>
+                                ))}</a></h1>
+                            ))
+                        }
+                    </div>
+                )
+            }
+        }
+
+
+        class ProjectWrapper extends React.Component {
+            constructor(props){
+                super(props)
+                this.children = []
+                this.children.push(React.cloneElement(this.props.children,null))
+                this.current = this.props.children.props.slug
+            }
+            componentDidMount(){
+
+            }
+            componentDidUpdate(){
+            }
+            render(){
+                const ccc = React.cloneElement(this.props.children,{style:{transform:"translate(0,0)"}})
+                return(
+                    <projects>{ccc}</projects>
+                )
+            }
+        }
+
+        class Project extends React.Component {
+            constructor(props){
+                super(props)
+                this.data = []
+            }
+            componentDidMount(){
+            }
+            componentDidUpdate(){
+            }
+            render(){
+                this.data = data.pages.filter((item)=>{
+                    return item.slug === this.props.slug
+                })
+                if(this.data.length){
+                    return(
+                        <React.Fragment>
+                        <div className="project">
+                            <article>
+                                {this.data[0].c.map(block=>(
+                                    <Block id={block.id} type={block.t} content={block.c}/>
+                                ))}
+                            </article>
+                        </div>
+                        <div className="back" onClick={()=>this.props.setLocation("/")}>BACK</div>
+                        </React.Fragment>
+                    )
+                }
+                return(<React.Fragment/>)
+            }
+        }
+
+        class Block extends React.Component {
+            constructor(props){
+                super(props)
+            }
+            render(){
+                if(this.props.type=="title"){
+                    return(
+                        <h1>{this.props.content}</h1>
+                    )
+                }
+                if(this.props.type=="text"){
+                    return(
+                        <section dangerouslySetInnerHTML={{
+                            __html: this.props.content
+                        }}></section>
+                    )
+                }
+                if(this.props.type=="repeater"){
+                    return(
+                        <section style={{margin: "0",maxWidth: "calc(800px + 2rem)"}}>
+                            <div className="image-repeater" style={{backgroundImage:`url('${this.props.content.s}')`,width:this.props.content.w}}/> 
+                        </section>
+                    )
+                }
+                if(this.props.type=="footer"){
+                    return(
+                        <footer>
+                            <div className="l">
+                                <video src={this.props.content.v} autoPlay muted loop playsInLine></video>    
+                            </div>
+                            <div className="r">
+                                <div>Yuhao Yang</div>
+                                <div>{this.props.content.d}</div>    
+                            </div>
+                        </footer>
+                    )
+                }
+                return(<React.Fragment/>)
+            }
+        }
+
+        class App extends React.Component {
+            constructor(props){
+                super(props)
+                this.state = {
+                    location:null
+                }
+            }
+            componentDidMount(){
+                this.setState({location:window.location.hash.split("/")[1]||""})
+                window.addEventListener("hashchange",()=>{
+                    this.setState({location:window.location.hash.split("/")[1]||""})
+                })
+            }
+            componentDidUpdate(){
+                window.location.hash = "#/"+this.state.location
+            }
+            render(){
+                return(
+                    <React.Fragment>
+                        <Home location={this.state.location} setLocation={(target)=>this.setState({location:target})}/>
+                        <ProjectWrapper>
+                            <Project slug={this.state.location} setLocation={(target)=>this.setState({location:target})}/>    
+                        </ProjectWrapper>
+                    </React.Fragment>
+                )
+            }
+        }
+
+        const root = document.getElementById("root");
+        ReactDOM.render(<App/>,root);
     </script>
 </body>
 </html>

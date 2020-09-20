@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <title>Week3 - Yuhao Yang</title>
 </head>
-<body>
-    
+<body style="margin: 0;">
+    <div id="root"></div>
+    <script type="text/babel">
+        const root = document.getElementById("root");
+        class App extends React.Component {
+            render(){
+                return(
+                    <React.Fragment>
+                    <div>Hello</div>
+                    </React.Fragment>
+                )
+            }
+        }
+        ReactDOM.render(<App/>,root);
+        console.log(window.location.pathname)
+    </script>
 </body>
 </html>

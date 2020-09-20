@@ -1,14 +1,18 @@
 html{
     font-size: 20px;
-    font-family: 'Raleway', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
     margin: 0;
     overflow-x: hidden;
+    transition: background-color 0.5s;
 }
 
-#start{
+.start{
+    opacity: 0;
+    overflow-x: hidden;
+    transition: opacity 0.5s;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,28 +21,124 @@ body{
     float: right;
 }
 
-#start > h1{
+.start > h1{
     margin: 0;
     font-size: 4rem;
     line-height: 4rem;
     text-transform: uppercase;
     font-weight: 900;
     word-break: break-all;
+    letter-spacing: -0.1rem;
 }
 
-a[href]{
+.start > h1 > a[myhref]{
     color:black;
     text-decoration:none;
     display: inline-block;
     transition: transform 0.1s;
+    cursor: pointer;
 }
 
-a[href]:hover{
+.start > h1 > a[myhref] > *{
+    pointer-events: none;
+}
+
+.start > h1 > a[myhref]:hover{
     transform: skew(-30deg,0) translate(1rem,0);
 }
 
-span[t]{
+.start > h1 > a > span[t]{
+    font-size: 4.2rem;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 100;
     font-style: italic;
+}
+
+@font-face {
+    font-family: "font";
+    src: url("assets/font.woff2");
+}
+
+.project{
+    width: 100%;
+    max-width: calc(800px + 2rem);
+    position: fixed;
+    overflow: scroll;
+    overflow-x: hidden;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: white;
+}
+
+.back{
+    position: fixed;
+    left: calc(800px + 2rem);
+    bottom: 0;
+    font-size: 2rem;
+    font-weight: 900;
+    margin: 1rem;
+    line-height: 2rem;
+    cursor: alias;
+}
+
+.project::-webkit-scrollbar {
+    display: none;
+}
+  
+
+article{
+    font-family: "font";
+}
+
+article > h1{
+    margin: 1rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+article > section > .image-repeater{
+    height: 300px;
+    background-repeat: repeat;
+    background-size: auto 100%;
+    animation: repeater 10s infinite linear;
+}
+@keyframes repeater {
+    0%   {background-position: 0% 0%;}
+    100% {background-position: 100% 0%;}
+}
+article > footer{
+    margin: 1rem;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    max-width: 400px;
+    height: 9rem;
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background-color: #000;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+}
+
+article > footer > .l{
+    width: 60%;height: 100%;
+}
+
+article > footer > .l > video{
+    object-fit: cover;width: 100%;height: 100%;border-radius: 0.5rem 0 0 0.5rem;
+}
+
+article > footer > .r{
+    margin:0.5rem;
+}
+
+article > section{
+    max-width: 800px;
+    margin: 1rem;
+    overflow: hidden;
+}
+
+article > section > a{
+    color: black;
 }
