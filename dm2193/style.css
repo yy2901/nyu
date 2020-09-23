@@ -1,6 +1,11 @@
+@font-face {
+    font-family: "font";
+    src: url("assets/font.woff2");
+}
+
 html{
     font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "font",Arial, Helvetica, sans-serif;
 }
 
 body{
@@ -48,15 +53,10 @@ body{
 }
 
 .start > h1 > a > span[t]{
-    font-size: 4.2rem;
+    font-size: 4.4rem;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 100;
     font-style: italic;
-}
-
-@font-face {
-    font-family: "font";
-    src: url("assets/font.woff2");
 }
 
 .project{
@@ -69,6 +69,8 @@ body{
     left: 0;
     height: 100vh;
     background-color: white;
+    transition: transform 0.5s;
+    transform: translate(0,100%);
 }
 
 .back{

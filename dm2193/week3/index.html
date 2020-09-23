@@ -12,11 +12,29 @@
     <div id="root"></div>
     <script type="text/babel">
         const root = document.getElementById("root");
+        const data = {
+            id:123,
+            location:"main",
+            title:"Hello there",
+            description:"This is a json function test"
+        }
+        const post = ({id,location},ref)=>{
+            return(
+                <div><h1 ref={ref}>{id}</h1><h2>{location}</h2></div>
+            )
+        }
         class App extends React.Component {
+            constructor(){
+                super()
+                this.h1 = React.createRef()
+            }
+            componentDidMount(){
+                this.h1.current.style.color="red"
+            }
             render(){
                 return(
                     <React.Fragment>
-                    <div>Hello</div>
+                    <div>{post(data,this.h1)}</div>
                     </React.Fragment>
                 )
             }
