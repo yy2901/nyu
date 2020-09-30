@@ -1,0 +1,156 @@
+html{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    margin: 0;
+}
+#nav{
+    position: fixed;
+    width: 2rem;
+    top: 0;
+    left: 0;
+    background-color: black;
+    height: 100vh;
+    z-index: 3;
+    color:white
+}
+#nav > h1{
+    writing-mode: vertical-rl;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 2rem;
+    vertical-align: center;
+    margin-top: 1rem;
+}
+#nav > ul{
+    list-style: none;
+    position: absolute;
+    bottom: 1rem;
+    margin: 0;
+    left: 0;
+    padding: 0;
+}
+#nav > ul >li{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: 2rem;
+    margin: 0;
+    text-align: center;
+}
+#nav>ul>li.active{
+    background-color: white;
+    color: black;
+}
+
+.wrapper{
+    margin-left: 2rem;
+}
+
+.hero{
+    width: calc(33.3333333333333vw - 0.6666666666666667rem);
+    height: 100vh;
+    background-color: pink;
+    display: inline-block;
+    margin: 0;
+    float: left;
+    background-repeat: repeat;
+    background-size: cover;
+    position: relative;
+    color:white;
+    z-index: -1;
+}
+.hero>h1{
+    margin: 0;
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    font-size: 4rem;
+    text-transform: uppercase;
+    line-height: 4rem;
+    word-break: break-all;
+}
+.hero>a{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero.entered{
+    top: 0;
+    position: absolute;
+    width: calc(100% - 2rem);
+    height: 80vh;
+    background-size: contain;
+}
+
+.content{
+    margin-left: 2rem;
+    margin-top: 80vh;
+}
+
+.content > section{
+    font-size: 1.5rem;
+    font-family: Tahoma, Geneva, sans-serif;
+    margin: 2rem;
+    font-weight: 600;
+    max-width: 800px;
+}
+
+.content > section:nth-child(1){
+    padding-top: 2rem;
+}
+
+.content > .cover{
+    height: 80vh;
+    width: 100%;
+    position: relative;
+}
+
+.content > .cover > video{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.content > .cover > img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.content > .cover > .alt{
+    position: absolute;
+    background-color: white;
+    bottom: -2px;
+    padding: 0.5rem 1rem 0 1rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+    margin-left: 2rem;
+}
+
+.content>.repeater{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+.content>.repeater>div{
+    height: 100%;
+    background-size: contain;
+    background-repeat: repeat;
+    animation: repeater linear infinite 30s;
+}
+@keyframes repeater{
+    0%{
+        background-position: 0 0;
+    }
+    100%{
+        background-position: 100% 0;
+    }
+}
+
+.content> section >a{
+    color: black;
+}
