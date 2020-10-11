@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300;600;900&display=swap" rel="stylesheet">
+    <title>GOOMGLE</title>
+    <base href="https://www.google.com/" target="_blank">
+    <style>
+        html{
+            font-size: 20px;
+            font-family: 'Commissioner', sans-serif;
+            width: 100vw;
+        }
+        body{
+            margin: 0;
+            width: 100vw;
+        }
+        #header{
+            transform: translate(0,calc(40vh - 50%));
+            transition: transform 0.5s;
+            margin-top: 2rem;
+            width: 100vw;
+            overflow: hidden;
+        }
+        #title{
+            width: 100%;
+            text-align: center;
+            font-size: 5rem;
+            font-weight: 900;
+            letter-spacing: -0.2rem;
+        }
+        #search{
+            max-width: 800px;
+            width: calc(100% - 2rem);
+            font-size: 2rem;
+            margin: 1rem;
+            margin-left: 50%;
+            transform:translate(-50%,0);
+            text-align: center;
+        }
+        article{
+            display: block;
+            margin: 0 1rem 1rem 50%;
+            transform: translate(-50%,0);
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            border: solid 1px black;
+            max-width: 800px;
+            width: calc(100% - 2rem);
+            box-sizing: border-box;
+        }
+        article a{
+            color: black!important;
+            text-transform: uppercase;
+        }
+        article h3{
+            margin: 0;
+        }
+        article img{
+            display: none;
+        }
+        article .location{
+            font-size: 0.8rem;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+        @media only screen and (max-width: 600px) {
+            #title{
+                font-size: 3rem;
+                letter-spacing: -0.12rem;
+            }
+            #search{
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"><div id="title">GOOMGLE</div>
+    <input id="search" placeholder="Search on GOOMGLE" type="text" onkeydown="res(this)">
+    </div>
+    <div id="res0"></div>
+    <script>
+        const res0 = document.getElementById("res0");
+        function res(ele){
+            if(event.key === 'Enter'){
+                search(ele.value);
+            }
+        }
+        function search(g){
+            document.getElementById("header").style.transform = "translate(0,0)"
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == XMLHttpRequest.DONE) {
+                    const res = xhr.response;
+                    const parser = new DOMParser();
+                    const xml = parser.parseFromString(res,"text/html");
+                    post(xml.getElementsByClassName("xpd")[10].innerHTML);
+                }
+            }
+            xhr.open("POST", "http://108.41.31.118:8001/", true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify({
+                key: g
+            }));
+        }
+        function post(c){
+            var xhr2 = new XMLHttpRequest();
+            xhr2.onreadystatechange = function() {
+                if (xhr2.readyState == XMLHttpRequest.DONE) {
+                    const res = xhr2.response;
+                    const list = eval(res);
+                    const res1 = document.createElement("div");
+                    for(let i=list.length-1;i>=0;i--){
+                        const d = document.createElement("article");
+                        d.innerHTML = list[i];
+                        res1.appendChild(d);
+                    }
+                    res0.innerHTML = res1.innerHTML;
+                }
+            }
+            xhr2.open("POST", "http://108.41.31.118:8001/log/", true);
+            xhr2.setRequestHeader('Content-Type', 'application/json');
+            xhr2.send(JSON.stringify({
+                html: c
+            }));
+        }
+    </script>
+</body>
+</html>
