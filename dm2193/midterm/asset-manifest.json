@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "./static/css/main.9c17d454.chunk.css",
+    "main.css": "./static/css/main.78d2de66.chunk.css",
     "main.js": "./static/js/main.00f966e0.chunk.js",
     "main.js.map": "./static/js/main.00f966e0.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.42ee6e23.js",
@@ -8,9 +8,9 @@
     "static/js/2.69942a13.chunk.js": "./static/js/2.69942a13.chunk.js",
     "static/js/2.69942a13.chunk.js.map": "./static/js/2.69942a13.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.19ed5a90b3c1fc997210956595a962fe.js": "./precache-manifest.19ed5a90b3c1fc997210956595a962fe.js",
+    "precache-manifest.7c7f2f863fd62b331b6eabfaae65dfeb.js": "./precache-manifest.7c7f2f863fd62b331b6eabfaae65dfeb.js",
     "service-worker.js": "./service-worker.js",
-    "static/css/main.9c17d454.chunk.css.map": "./static/css/main.9c17d454.chunk.css.map",
+    "static/css/main.78d2de66.chunk.css.map": "./static/css/main.78d2de66.chunk.css.map",
     "static/js/2.69942a13.chunk.js.LICENSE.txt": "./static/js/2.69942a13.chunk.js.LICENSE.txt",
     "static/media/App.scss": "./static/media/SpaceGrotesk-SemiBold.7b228459.woff",
     "static/media/a1.jpg": "./static/media/a1.e7cfeb2a.jpg",
@@ -46,7 +46,7 @@
   "entrypoints": [
     "static/js/runtime-main.42ee6e23.js",
     "static/js/2.69942a13.chunk.js",
-    "static/css/main.9c17d454.chunk.css",
+    "static/css/main.78d2de66.chunk.css",
     "static/js/main.00f966e0.chunk.js"
   ]
 }
