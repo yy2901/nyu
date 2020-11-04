@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Population</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        button {
+            display: inline-block;
+            width: 0;
+            transform: scale(0,0);
+            height: 100px;
+            background: rgba(0,100,0,0.8);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            color: #fff;
+            font-size: 24px;
+            border-radius: 50%;
+            border: none;
+            outline: none;
+            transition: width 0.2s, transform 0.2s;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: yellow;
+        }
+        body::-webkit-scrollbar{
+            display: none;
+        }
+        .box{
+            min-height: 100vh;
+            min-width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 0;
+            box-sizing: border-box;
+            padding: 15px;
+        }
+        .box1{
+            letter-spacing: 0;
+            text-align: center;
+            width: 100%;
+        }
+        #text{
+            z-index: -1;
+            position: fixed;
+            top: 0;
+            left: 0;
+            text-transform: uppercase;
+            font-size: calc(6vh + 6vw);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: calc(5vh + 5vw);
+            word-wrap: break-word;
+            width: 100%;
+            color: rgb(255,0,0);
+        }
+        #text:nth-child(1){
+            animation: t1 linear infinite 30s;
+        }
+        @keyframes t1 {
+            0%{
+                transform:translate(0,100vh);
+            }
+            100%{
+                transform:translate(0,-100%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="text">Button population: Start by pressing the button. It would either propogate a new button or kill itself.</div>
+    <div class="box">
+        <div class="box1"><button style="width: 100px;transform: scale(0.8,0.8);">0</button></div>
+    </div>
+</body>
+<script src="./js/index.js"></script>
+
+</html>
