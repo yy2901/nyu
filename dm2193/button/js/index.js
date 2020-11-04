@@ -1,8 +1,10 @@
 const btn = document.getElementsByTagName('button')[0];
 const box = document.querySelector('.box1')
+let p = 0.99;
 
 function funa(button){
-    const num = Math.round(Math.random()*1.05);
+    p*=0.99;
+    const num = Math.round(Math.random()*(1.0+p));
     if(num === 0){
         setTimeout(() => {
             button.style.width="0";
