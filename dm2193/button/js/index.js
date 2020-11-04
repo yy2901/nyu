@@ -2,7 +2,7 @@ const btn = document.getElementsByTagName('button')[0];
 const box = document.querySelector('.box1')
 
 function funa(button){
-    const num = Math.round(Math.random());
+    const num = Math.round(Math.random()*1.5);
     if(num === 0){
         setTimeout(() => {
             button.style.width="0";
