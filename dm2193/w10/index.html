@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medium -> Message</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <style>
+        html{
+            font-size: 25px;
+            font-family: 'Archivo Black', Arial, Helvetica, sans-serif;
+            font-weight: 900;
+            color: white;
+            word-break:break-all;
+        }
+        body{
+            margin: 0;
+            background-color: black;
+        }
+        .block{
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+        }
+
+        .container{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        img,video{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        #ray{
+            background: radial-gradient(circle, rgba(255,186,0,1) 0%, rgba(255,212,0,0) 70%);
+            z-index: -1;
+            width: 180px;
+            height: 180px;
+            position: absolute;
+            transform: translate(0,-50%);
+            animation: ray 5s infinite;
+        }
+        @keyframes ray{
+            0%{opacity: 0;}
+            3.7%{opacity: 0;}
+            7.4%{opacity: 1;}
+            11.1%{opacity: 0;}
+            14.8%{opacity: 1;}
+            18.5%{opacity: 0;}
+            22.2%{opacity: 1;}
+            25.9%{opacity: 0;}
+            29.6%{opacity: 0;}
+            33.3%{opacity: 1;}
+            37%{opacity: 1;}
+            40.7%{opacity: 0;}
+            44.4%{opacity: 0;}
+            48.1%{opacity: 1;}
+            51.9%{opacity: 1;}
+            55.6%{opacity: 0;}
+            59.3%{opacity: 0;}
+            63.0%{opacity: 1;}
+            66.7%{opacity: 1;}
+            70.4%{opacity: 0;}
+            74.1%{opacity: 0;}
+            77.8%{opacity: 1;}
+            81.5%{opacity: 0;}
+            85.2%{opacity: 1;}
+            88.9%{opacity: 0;}
+            92.6%{opacity: 1;}
+            96.3%{opacity: 0;}
+            100%{opacity: 0;}
+        }
+    </style>
+</head>
+<body>
+    <div class="block">
+        <div id="light" style="opacity: 0;" class="container">
+            <div style="width: 50%;height:50%;max-width: 200px;">
+                    <img src="assets/light_bulb.png">
+            </div>
+        </div>
+        <div class="container" style="position: absolute;top:0;font-size: calc(100vw / 5);">
+            <a>LIGHT</a>
+        </div>
+    </div>
+    <div class="block">
+        <div id="rayC" style="position: fixed;top: 0;transition: opacity 0.2s;opacity: 0;" class="container">
+            <div style="width: 50%;height:50%;max-width: 200px;display: flex;justify-content: center;align-items: center;">
+                <div id="ray"></div>
+            </div>
+        </div>
+    </div>
+    <div class="block">
+        <div class="container" id="sos" style="position: absolute;top:0;font-size: calc(100vw / 5);">
+            <a>SOS</a>
+        </div>
+    </div>
+    <div class="block">
+        <div class="container" id="help" style="position: absolute;top:0;font-size: calc(100vw / 5);">
+            <a>HELP</a>
+        </div>
+    </div>
+    <div class="block">
+        <div id="helpV" class="container">
+            <div style="width: 100%;height:100%;">
+                    <video src="assets/help.mp4" autoplay playsinline loop muted>
+            </div>
+        </div>
+    </div>
+    <div class="block">
+        <div id="youtube" class="container" style="position: absolute;top:0;font-size: calc(100vw / 8);">
+            <a>YOUTUBE</a>
+        </div>
+    </div>
+    <div class="block">
+        <div id="kill" class="container" style="position: absolute;top:0;font-size: calc(100vw / 8);">
+            <a>KILLED TUBE</a>
+        </div>
+    </div>
+    <div class="block">
+        <iframe style="width: 100%;height: 100%;" src="https://www.youtube.com/embed/W8r-tXRLazs?start=50;rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+    </div>
+    <script>
+        let height = document.querySelector(".block").clientHeight;
+        window.addEventListener("resize",()=>{
+            height = document.querySelector(".block").clientHeight;
+        });
+        const light = document.getElementById("light");
+        const rayC = document.getElementById("rayC");
+        const sos = document.getElementById("sos");
+        const help = document.getElementById("help");
+        const helpV = document.getElementById("helpV");
+        const youtube = document.getElementById("youtube");
+        const kill = document.getElementById("kill");
+        window.addEventListener("scroll",()=>{
+            const f = window.pageYOffset/height;
+            console.log(f)
+            if(f<2){
+                light.style.paddingTop=`0`
+                light.style.position="fixed"
+                light.style.opacity = f
+            }else{
+                light.style.paddingTop=`${2*height}px`
+                light.style.position="relative"
+            }
+            if(f>0&&f<2){
+                rayC.style.opacity=1
+            }else{
+                rayC.style.opacity=0
+            }
+            if(f>2){
+                sos.style.position = "fixed"
+                sos.style.top = "0"
+                sos.style.opacity = 1-f+2
+            }else{
+                sos.style.position = "relative"
+            }
+            if(f>3){
+                help.style.position = "fixed"
+                help.style.top = "0"
+                help.style.opacity = 1-f+3
+            }else{
+                help.style.position = "relative"
+            }
+            if(f>4){
+                helpV.style.position = "fixed"
+                helpV.style.top = "0"
+                helpV.style.opacity = 1-f+4
+            }else{
+                helpV.style.position = "relative"
+            }
+            if(f>5){
+                youtube.style.position = "fixed"
+                youtube.style.top = "0"
+                youtube.style.opacity = 1-f+5
+            }else{
+                youtube.style.position = "relative"
+            }
+            if(f>6){
+                kill.style.position = "fixed"
+                kill.style.top = "0"
+                kill.style.opacity = 1-f+6
+            }else{
+                kill.style.position = "relative"
+            }
+        })
+    </script>
+</body>
+</html>
