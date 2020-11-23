@@ -1,0 +1,122 @@
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+}
+
+#add{
+    left: 2.5vw;
+}
+#link{
+    right: 2.5vw;
+    transition: transform 0.25s;
+}
+.button{
+    position: fixed;
+    width: 10vw;
+    height: 10vw;
+    bottom: 2.5vw;
+    z-index: 1;
+}
+.button > img{
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+#b_bar{
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 20vw;
+    left: 0;
+    background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1),rgba(255,255,255,1),rgba(255,255,255,1));
+}
+
+body{
+    margin: 0;
+    overflow-x: hidden;
+}
+.content{
+    width: 95vw;
+    margin: 2.5vw;
+    line-height: 5.5vw;
+    margin-bottom: 20vw;
+}
+.word{
+    display: inline;
+    text-transform: capitalize;
+    margin-right: 2vw;
+    font-size: 6vw;
+    font-weight: 900;
+    letter-spacing: -0.3vw;
+    transition: color 0.2s;
+}
+.word > a{
+    pointer-events: none;
+}
+
+.word:after{
+    content: " ";
+}
+
+.word[b="1"]:after{
+    content: "\A\A";
+    white-space: pre;
+}
+
+#copied{
+    position: fixed;
+    bottom: 15vw;
+    right: 2.5vw;
+    border: 1px black solid;
+    padding: 5pt 10pt 5pt 10pt;
+    background-color: white;
+    transition: opacity 0.5s, transform 0.5s;
+    opacity: 0;
+    transform: translate(0,100%)
+}
+
+.menu{
+    list-style: none;
+    position: fixed;
+    overflow:hidden;
+    border: 1px solid black;
+    background-color:white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 100;
+    margin: 0;
+    font-size: 12pt;
+    line-height: 12pt;
+    padding: 0;
+    top: calc(var(--y) + 6vw);
+    left: var(--x);
+    transform: scale(1,0);
+    transform-origin: top;
+    box-sizing: border-box;
+    transition: transform 0.2s;
+}
+
+.menu[active="1"]{
+    transform: scale(1,1);
+}
+
+.menu > li{
+    padding: 5pt 10pt 5pt 10pt;
+    text-transform: uppercase;
+}
+.menu > li[active="1"]{
+    color: #ddd;
+}
+.menu > li:nth-child(1){
+    padding-top: 10pt;
+}
+.menu > li:last-child{
+    padding-bottom: 10pt;
+}
+
+#m_d{
+    color: red;
+}
