@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/RubaXa/Sortable/Sortable.min.js"></script>
+    <title>Store CMS</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Store CMS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Edit </a>
+            </li>
+          </ul>
+          <ul class="navbar-nav mr-0">
+            <li class="nav-item mr-2">
+              <a class="nav-link" href="#">Hello User </a>
+            </li>
+            <li class="nav-item">
+                <button type="button" class="btn btn-secondary">Log Out</button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container-lg pt-3">
+          <div class="m-3"><h2>Edit Item</h2></div>
+          <form class="m-3">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="border rounded p-3">
+                        <div class="mb-3">
+                            <label>Item Name </label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="mb-3">
+                            <label>Item ID </label>
+                            <input class="form-control" type="text" placeholder="1578616961" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label>Price </label>
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                                <input class="form-control" type="number" placeholder="299">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label>Quantity </label>
+                            <div class="input-group">
+                            <input class="form-control mr-3 rounded" type="number" placeholder="52" readonly><button class="btn text-light bg-dark">Stock</button>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="">
+                            <label>Free Shipping</label>
+                        </div>
+                    </div>
+                    <div class="mb-4 mt-3">
+                        <div class="btn-group mb-3" role="group">
+                            <button type="button" class="btn text-light bg-danger">Delete Item</button>
+                            <button type="button" class="btn btn-secondary">Save</button>
+                        </div><br>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn text-light bg-dark">Preview</button>
+                            <button type="button" class="btn text-light bg-primary">Publish</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="mb-4"><h5>Item Description</h5>
+                        <textarea rows="12" class="form-control"></textarea>
+                    </div>
+                    <div><h5>Item Media</h5>
+                        <div>
+                            <ul class="list-group mb-3" id="item_images">
+                            </ul>
+                            <button type="button" class="btn text-light bg-dark" id="add_img">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </form>
+      </div>
+
+</body>
+<script>
+    Sortable.create(item_images, { animation: 100, group: 'list-1', draggable: '.list-group-item', handle: '.list-group-item', sort: true, filter: '.sortable-disabled', chosenClass: 'active' });
+    document.getElementById("add_img").addEventListener("click",()=>{
+        $("#item_images").append(`<li class="list-group-item" style="display:flex">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Upload</span>
+                                        </div>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input">
+                                            <label class="custom-file-label">Choose file</label>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn text-light bg-danger ml-3 rm_img">Remove</button>
+                                </li>`);
+        const rm_img = document.getElementsByClassName("rm_img");
+        rm_img[rm_img.length-1].addEventListener("click",(e)=>{
+            e.target.parentNode.remove()
+        })
+    })
+</script>
+</html>
